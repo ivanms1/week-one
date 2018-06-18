@@ -3,7 +3,7 @@ const logger = require('morgan');
 
 const app = express();
 
-app.use(logger('dev'));
+// app.use(logger('dev'));
 
 app.get('/', (req, res) => {
     res.json({ status: 'success' });
@@ -20,3 +20,5 @@ app.get('/data', (req, res) => {
 });
 
 app.listen(3000, () => console.log('Listening on port 3000'));
+
+module.exports = app; //for testing
