@@ -3,7 +3,9 @@ const logger = require('morgan');
 
 const app = express();
 
-// app.use(logger('dev'));
+if(process.env.NODE_ENV !== 'test') {
+    app.use(logger('dev'));
+}
 
 app.get('/', (req, res) => {
     res.json({ status: 'success' });
